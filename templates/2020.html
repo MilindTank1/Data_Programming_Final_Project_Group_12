@@ -1,0 +1,63 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="/static/style.css" />
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Date', 'Price'],
+            ['January',  0.7697],
+            ['February',  0.7533],
+            ['March',  0.7487],
+            ['April',  0.7034],
+            ['May',  0.7109],
+            ['June',  0.7337],
+            ['July',  0.7361],
+            ['August',  0.7478],
+            ['September',  0.766],
+            ['October',  0.7523],
+            ['November',  0.7543],
+            ['December',  0.7721],
+          ]);
+  
+          var options = {
+            title: 'Canadian dollar to US dollar daily exchange rate in 2020',
+            curveType: 'function',
+            legend: { position: 'bottom' },
+            vAxes: {
+          0: {title: 'Exchange Rate'},
+        },
+        hAxes: {
+          0: {title: 'Month'},
+          },
+          series: {
+            0: { color: '#32CD32' }
+          }
+          };
+  
+          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  
+          chart.draw(data, options);
+        }
+      </script>
+    </head>
+    <body style="background-color: #24252A;">
+      <header>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/google-charts/line-chart_2017">2017</a></li>
+                <li><a href="/google-charts/line-chart_2018">2018</a></li>
+                <li><a href="/google-charts/line-chart_2019">2019</a></li>
+                <li><a href="/google-charts/line-chart_2020">2020</a></li>
+                <li><a href="/about">about</a></li>
+            </ul>
+        </nav>
+    </header>
+      <div id="curve_chart" style="width: auto; height: 550px"></div>
+    </body>
+  </html>
+  
